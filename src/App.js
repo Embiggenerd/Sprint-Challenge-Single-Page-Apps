@@ -3,11 +3,12 @@ import Header from "./components/Header.js";
 import { Switch, Route } from 'react-router-dom'
 import WelcomePage from './components/WelcomePage'
 import CharacterList from './components/CharacterList'
+import { Container, Row, Col } from 'reactstrap';
 
 
 export default function App() {
   return (
-    <main>
+    <Container>
       <Switch>
 
         <Route path="/characters">
@@ -23,6 +24,6 @@ export default function App() {
       </Switch>
 
 
-    </main>
+    </Container>
   );
 }

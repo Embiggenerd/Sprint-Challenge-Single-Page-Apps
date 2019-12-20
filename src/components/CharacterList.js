@@ -3,6 +3,8 @@ import axios from 'axios'
 
 import CharacterCard from './CharacterCard'
 import SearchForm from './SearchForm'
+import { Container, Row, Col } from 'reactstrap';
+
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -20,9 +22,9 @@ export default function CharacterList() {
   }, []);
 
   // We populate filteredCharacters on every characters update
-  useEffect(()=>setFilteredCharacters(characters), [characters])
+  useEffect(() => setFilteredCharacters(characters), [characters])
 
-  useEffect(()=>{ // Filters the characters on every update to query state
+  useEffect(() => { // Filters the characters on every update to query state
     setFilteredCharacters(characters.filter(char => {
       return (
         char.name.toLowerCase().includes(query.toLowerCase())
@@ -31,12 +33,15 @@ export default function CharacterList() {
   }, [query])
 
   return (
-    <div>
-      <SearchForm setQuery={setQuery} query={query}/>
-      <div className="character-list">
-        <h2>Characters from rick and morty</h2>
-        {filteredCharacters.map(char => <CharacterCard key={char.id} name={char.name} status={char.status} species={char.species} />)}
-      </div>
-    </div>
+    <>
+      <SearchForm setQuery={setQuery} query={query} />
+      <Row>
+
+        <Col sm="12" md={{ size: 6, offset: 3 }}><h2>Characters from rick and morty</h2></Col>
+        <Col sm="12" md={{ size: 6, offset: 3 }}>{filteredCharacters.map(char => <CharacterCard key={char.id} name={char.name} status={char.status} species={char.species} />)}
+        </Col>
+      </Row>
+    </>
+
   );
 }
