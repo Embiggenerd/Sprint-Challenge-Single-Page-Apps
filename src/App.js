@@ -5,7 +5,6 @@ import WelcomePage from './components/WelcomePage'
 import CharacterList from './components/CharacterList'
 import { Container, Row, Col } from 'reactstrap';
 
-
 export default function App() {
   return (
     <Container>
