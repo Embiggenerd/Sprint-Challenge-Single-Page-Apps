@@ -29,6 +29,8 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 > Answer:
 
+Client side routing allows a user to view different parts of a site without makig calls to the backend. This reduces stress on servers and makes navigating a web app faster.
+
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
